@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $cod_caso = $_POST['cod_caso'];
 
 
-    $consulta_k = "SELECT * FROM baseuno.encuesta
+    $consulta_k = "SELECT * FROM u253606672_db1_proyectos.encuesta
     where encuesta.COD_CASO_ENCUESTA = $cod_caso";
     
     $query_k =  mysqli_query($db, $consulta_k);
@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     if (!$row_k){
 
-        $insert_a = "INSERT INTO baseuno.encuesta (COD_CASO_ENCUESTA, SUGERENCIA, CALIFICACION) VALUE ($cod_caso, '$comentario', '$estrellas')";
+        $insert_a = "INSERT INTO u253606672_db1_proyectos.encuesta (COD_CASO_ENCUESTA, SUGERENCIA, CALIFICACION) VALUE ($cod_caso, '$comentario', '$estrellas')";
 
         $query_a =  mysqli_query($db, $insert_a);  
         

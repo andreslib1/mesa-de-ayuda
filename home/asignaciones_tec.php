@@ -15,8 +15,8 @@ if (($_SESSION['rol_usuario'] == 3) || $_SESSION['rol_usuario'] == 2){
 
 $cod_caso = $_GET['cod_caso'];
 
-$consulta_e = "SELECT * FROM baseuno.casos
-                INNER JOIN baseuno.usuarios_reg
+$consulta_e = "SELECT * FROM u253606672_db1_proyectos.casos
+                INNER JOIN u253606672_db1_proyectos.usuarios_reg
                 ON casos.COD_USUARIO_SOLICITA = usuarios_reg.COD_USUARIO
                 WHERE casos.COD_CASO = $cod_caso"; 
 
@@ -64,10 +64,10 @@ display: none;
                 
             }else{
 
-                $insert_a = "INSERT INTO baseuno.casos_tec (COD_CASO_ATEN, COD_USUARIO_TECNICO) 
+                $insert_a = "INSERT INTO u253606672_db1_proyectos.casos_tec (COD_CASO_ATEN, COD_USUARIO_TECNICO) 
                 VALUES ($cod_caso, $cod_user_tec)";
 
-                $update = "UPDATE baseuno.casos SET ESTADO = 'En Curso'
+                $update = "UPDATE u253606672_db1_proyectos.casos SET ESTADO = 'En Curso'
                         WHERE COD_CASO = $cod_caso ";
 
                 $query_a =  mysqli_query($db, $insert_a);
@@ -112,7 +112,7 @@ display: none;
                         <option value="seleccione">Seleccione</option>
                                 <?php
 
-                                        $consulta = "SELECT * FROM baseuno.usuarios_reg WHERE COD_ROL_USUARIO = 2 OR COD_ROL_USUARIO = 1";
+                                        $consulta = "SELECT * FROM u253606672_db1_proyectos.usuarios_reg WHERE COD_ROL_USUARIO = 2 OR COD_ROL_USUARIO = 1";
                                         $user = mysqli_query($db,$consulta);
 
                                         while( $rol = mysqli_fetch_assoc($user)){

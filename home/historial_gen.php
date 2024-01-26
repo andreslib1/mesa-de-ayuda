@@ -37,10 +37,10 @@ if (($_SESSION['rol_usuario'] == 3) || $_SESSION['rol_usuario'] == 2){
 
                         $user = $_SESSION['cod_usuario'];
                         
-                        $consult_a = "SELECT * FROM baseuno.casos
-                                        INNER JOIN baseuno.usuarios_reg
+                        $consult_a = "SELECT * FROM u253606672_db1_proyectos.casos
+                                        INNER JOIN u253606672_db1_proyectos.usuarios_reg
                                         ON casos.COD_USUARIO_SOLICITA = usuarios_reg.COD_USUARIO
-                                        LEFT JOIN baseuno.encuesta
+                                        LEFT JOIN u253606672_db1_proyectos.encuesta
                                         ON casos.COD_CASO = encuesta.COD_CASO_ENCUESTA
 
                                         WHERE ESTADO = 'Cerrado'";

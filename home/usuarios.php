@@ -81,7 +81,7 @@ if (($_SESSION['rol_usuario'] == 3) || $_SESSION['rol_usuario'] == 2){
                         <option value="seleccione">Seleccione</option>
                                 <?php
 
-                                        $query_two = "SELECT * FROM baseuno.rol";
+                                        $query_two = "SELECT * FROM u253606672_db1_proyectos.rol";
                                         $select_rol = mysqli_query($db,$query_two);
 
                                         while( $rol = mysqli_fetch_assoc($select_rol)){

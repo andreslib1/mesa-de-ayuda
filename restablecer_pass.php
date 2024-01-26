@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
    $correo = $_GET['correo']; 
    $token = $_GET['token'];
 
-            $query_tr = "SELECT * FROM baseuno.usuarios_reg WHERE TOKEN ='".$token."' AND CORREO ='".$correo."'";
+            $query_tr = "SELECT * FROM u253606672_db1_proyectos.usuarios_reg WHERE TOKEN ='".$token."' AND CORREO ='".$correo."'";
 
             $consulta_tr = mysqli_query($db,$query_tr);
 

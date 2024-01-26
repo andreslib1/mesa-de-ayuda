@@ -19,6 +19,7 @@ echo "</pre>";*/
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/css-etiquetas.css">
     <link rel="stylesheet" href="../css/media-q.css">
+    <link rel="icon" href="../img/logo_titulo.png" type="image/x-icon">
     <title>Help Desk USTA</title>
 </head>
 
@@ -116,8 +117,6 @@ echo "</pre>";*/
 
                        <a href="https://andress-organization-3.gitbook.io/manual-personal-administrativo/" target="_blank" class="menu" <?php if (strpos($url, 'manual_user.php') !== false){ echo $color;}else{ echo $color_pre;} ?>><li class="p-sm-2 my-2 my-sm-0 offset-2 hide-text"><i class="bi bi-book"></i> Manual de Usuario</li></a>
                   <?php } ?>  
-
-                  <a href="#enlace-protegido" target="_blank" class="menu p-sm-2 my-2 my-sm-0 offset-2 hide-text" style="text-decoration: none; color: #fff"><i class="bi bi-hammer"></i> Manual Tecnico</a>
 
       </div>
     </div>

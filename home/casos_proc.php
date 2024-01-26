@@ -39,14 +39,14 @@ include ('header.php');
                     $codi_caso = $_POST['codi_caso'];
                     
 
-                    $consult_ab = "SELECT * FROM baseuno.casos_tec
+                    $consult_ab = "SELECT * FROM u253606672_db1_proyectos.casos_tec
                     WHERE COD_CASO_ATEN = $codi_caso";
     
                     $user_ab = mysqli_query($db,$consult_ab);
                     $rol_ab = mysqli_fetch_assoc($user_ab);
 
 
-                    $consult = "UPDATE baseuno.casos_tec SET COD_CASO_ATEN = $codi_caso, COD_USUARIO_TECNICO = $cod_new_user WHERE COD_CASO_ASIG = ".$rol_ab['COD_CASO_ASIG']."";
+                    $consult = "UPDATE u253606672_db1_proyectos.casos_tec SET COD_CASO_ATEN = $codi_caso, COD_USUARIO_TECNICO = $cod_new_user WHERE COD_CASO_ASIG = ".$rol_ab['COD_CASO_ASIG']."";
 
                     $consult_r =  mysqli_query($db, $consult);
 
@@ -66,8 +66,8 @@ include ('header.php');
 
                 $user = $_SESSION['cod_usuario'];
                 
-                $consult = "SELECT * FROM baseuno.casos
-                            INNER JOIN baseuno.casos_tec
+                $consult = "SELECT * FROM u253606672_db1_proyectos.casos
+                            INNER JOIN u253606672_db1_proyectos.casos_tec
                             ON casos.COD_CASO = casos_tec.COD_CASO_ATEN
                             WHERE casos_tec.COD_USUARIO_TECNICO = $user
                             AND ESTADO = 'En curso' OR ESTADO ='Pendiente'";

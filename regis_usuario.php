@@ -30,7 +30,7 @@ if (($nom_usuario == '') || ($ape_usuario  == '') || ($correo_ins == '') || ($de
 
                 // validacion correo electronico no repetido en la base de datos
 
-                $query_con = "SELECT * FROM baseuno.usuarios_reg WHERE CORREO ='".$correo_ins."'";
+                $query_con = "SELECT * FROM u253606672_db1_proyectos.usuarios_reg WHERE CORREO ='".$correo_ins."'";
                                                         
                 $consulta = mysqli_query($db,$query_con);
 
@@ -56,7 +56,7 @@ if (($nom_usuario == '') || ($ape_usuario  == '') || ($correo_ins == '') || ($de
                             
                             $pass_hash = password_hash($confi_contraseña, PASSWORD_BCRYPT);
 
-                            $query_con = "INSERT INTO baseuno.usuarios_reg (COD_ROL_USUARIO, NOMBRE_USUARIO, APELLIDO, CORREO, DEPENDENCIA, UBICACION, CARGO, ESTADO_USUARIO, PASSWORD, FECHA_CREACION) VALUES (3, '".$nom_usuario."', '".$ape_usuario."', '".$correo_ins."', '".$dependencia."', '".$ubicacion."', '".$cargo."', 'Activo', '".$pass_hash."', NOW())";
+                            $query_con = "INSERT INTO u253606672_db1_proyectos.usuarios_reg (COD_ROL_USUARIO, NOMBRE_USUARIO, APELLIDO, CORREO, DEPENDENCIA, UBICACION, CARGO, ESTADO_USUARIO, PASSWORD, FECHA_CREACION) VALUES (3, '".$nom_usuario."', '".$ape_usuario."', '".$correo_ins."', '".$dependencia."', '".$ubicacion."', '".$cargo."', 'Activo', '".$pass_hash."', NOW())";
                             
                             $consulta = mysqli_query($db,$query_con);
 

@@ -14,7 +14,7 @@ if (isset($_POST['ingresar'])){
         $usuario = $_POST["usuario"];
         $password = $_POST["password"];
 
-        $sql = $con->query("SELECT * FROM baseuno.usuarios_reg  
+        $sql = $con->query("SELECT * FROM u253606672_db1_proyectos.usuarios_reg  
                             WHERE CORREO = $usuario 
                             AND PASSWORD = $password");
           

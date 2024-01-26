@@ -5,7 +5,7 @@ echo "</pre>";*/
 include ('../conexion.php');
 include ('header.php');
 
-$consult_a = "SELECT * FROM baseuno.usuarios_reg";
+$consult_a = "SELECT * FROM u253606672_db1_proyectos.usuarios_reg";
 
 $query_a =  mysqli_query($db, $consult_a);
 $row = mysqli_fetch_assoc($query_a)

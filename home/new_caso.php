@@ -35,7 +35,7 @@ echo "</pre>";*/
 
         }else{
 
-            $consult = "SELECT MAX(COD_CASO) FROM baseuno.casos";
+            $consult = "SELECT MAX(COD_CASO) FROM u253606672_db1_proyectos.casos";
 
             $consult_r =  mysqli_query($db, $consult);
 
@@ -46,14 +46,14 @@ echo "</pre>";*/
             if (!$adjunto['name']){ // proceso si el usuario NO adjunta un documento
 
                 
-                $insert_a = "INSERT INTO baseuno.casos (COD_CASO, COD_USUARIO_SOLICITA, TITULO_CASO, DESCRIPCION_CASO, ESTADO, FECHA_CREACION_CASO) 
+                $insert_a = "INSERT INTO u253606672_db1_proyectos.casos (COD_CASO, COD_USUARIO_SOLICITA, TITULO_CASO, DESCRIPCION_CASO, ESTADO, FECHA_CREACION_CASO) 
                 VALUES ($cod_caso, $cod_solici,'$asunto','$descripcion', 'Nuevo', NOW())";     
                 
 
-                $insert_b = "INSERT INTO baseuno.casos_tec (COD_CASO_ATEN, COD_USUARIO_TECNICO) 
+                $insert_b = "INSERT INTO u253606672_db1_proyectos.casos_tec (COD_CASO_ATEN, COD_USUARIO_TECNICO) 
                 VALUES ($cod_caso, $asignado)";
 
-                $consult_b = "SELECT * FROM baseuno.casos 
+                $consult_b = "SELECT * FROM u253606672_db1_proyectos.casos 
                 WHERE COD_CASO =  $cod_caso";
 
                 if ($asignado == 3){                // condicion si el usuario es funcionario
@@ -92,7 +92,7 @@ echo "</pre>";*/
                     
                 }else{   // si el usuario es administrador o tecnico 
           
-                $insert_e = "INSERT INTO baseuno.casos (COD_CASO, COD_USUARIO_SOLICITA, TITULO_CASO, DESCRIPCION_CASO, ESTADO, FECHA_CREACION_CASO) 
+                $insert_e = "INSERT INTO u253606672_db1_proyectos.casos (COD_CASO, COD_USUARIO_SOLICITA, TITULO_CASO, DESCRIPCION_CASO, ESTADO, FECHA_CREACION_CASO) 
                 VALUES ($cod_caso, $cod_solici,'$asunto','$descripcion', 'En Curso', NOW())";    
 
                     $query_a =  mysqli_query($db, $insert_e);    
@@ -155,12 +155,12 @@ echo "</pre>";*/
                         move_uploaded_file($adjunto['tmp_name'],'adjunto/'.$nom_archivo.$tipo_archivo);
                         
 
-                        $insert_c = "INSERT INTO baseuno.imagen_adj (COD_CASO_IMA, DESCRIPCION, TIPO_ADJUNTO) 
+                        $insert_c = "INSERT INTO u253606672_db1_proyectos.imagen_adj (COD_CASO_IMA, DESCRIPCION, TIPO_ADJUNTO) 
                         VALUES ($cod_caso,'".$nom_archivo.$tipo_archivo."', 'caso')";
 
                         if ($asignado == 3){  // condicion si el usuario es funcionario
 
-                            $insert_a = "INSERT INTO baseuno.casos (COD_CASO, COD_USUARIO_SOLICITA, TITULO_CASO, DESCRIPCION_CASO, ESTADO, FECHA_CREACION_CASO) 
+                            $insert_a = "INSERT INTO u253606672_db1_proyectos.casos (COD_CASO, COD_USUARIO_SOLICITA, TITULO_CASO, DESCRIPCION_CASO, ESTADO, FECHA_CREACION_CASO) 
                             VALUES ($cod_caso, $cod_solici,'$asunto','$descripcion', 'Nuevo', NOW())";    
                             
                             $query_a =  mysqli_query($db, $insert_a);    
@@ -168,7 +168,7 @@ echo "</pre>";*/
     
                                 if ($query_a && $query_c){
     
-                                    $consult_d = "SELECT * FROM baseuno.casos 
+                                    $consult_d = "SELECT * FROM u253606672_db1_proyectos.casos 
                                     WHERE COD_CASO =  $cod_caso";
     
                                         $query =  mysqli_query($db, $consult_d);
@@ -203,10 +203,10 @@ echo "</pre>";*/
 
                         }else{   // si el usuario es administrador o tecnico
                             
-                            $insert_a = "INSERT INTO baseuno.casos (COD_CASO, COD_USUARIO_SOLICITA, TITULO_CASO, DESCRIPCION_CASO, ESTADO, FECHA_CREACION_CASO) 
+                            $insert_a = "INSERT INTO u253606672_db1_proyectos.casos (COD_CASO, COD_USUARIO_SOLICITA, TITULO_CASO, DESCRIPCION_CASO, ESTADO, FECHA_CREACION_CASO) 
                             VALUES ($cod_caso, $cod_solici,'$asunto','$descripcion', 'En Curso', NOW())";    
     
-                            $insert_b = "INSERT INTO baseuno.casos_tec (COD_CASO_ATEN, COD_USUARIO_TECNICO) 
+                            $insert_b = "INSERT INTO u253606672_db1_proyectos.casos_tec (COD_CASO_ATEN, COD_USUARIO_TECNICO) 
                             VALUES ($cod_caso, $asignado)";
                             
     
@@ -216,7 +216,7 @@ echo "</pre>";*/
     
                                 if ($query_a && $query_b && $query_c){
     
-                                    $consult_d = "SELECT * FROM baseuno.casos 
+                                    $consult_d = "SELECT * FROM u253606672_db1_proyectos.casos 
                                     WHERE COD_CASO =  $cod_caso";
     
                                         $query =  mysqli_query($db, $consult_d);
@@ -267,7 +267,7 @@ echo "</pre>";*/
                         <option value="seleccione">Seleccione</option>
                                 <?php
 
-                                        $consulta = "SELECT * FROM baseuno.usuarios_reg WHERE COD_ROL_USUARIO = 2 OR COD_ROL_USUARIO = 1 ";
+                                        $consulta = "SELECT * FROM u253606672_db1_proyectos.usuarios_reg WHERE COD_ROL_USUARIO = 2 OR COD_ROL_USUARIO = 1 ";
                                         $user = mysqli_query($db,$consulta);
 
                                         while( $rol = mysqli_fetch_assoc($user)){

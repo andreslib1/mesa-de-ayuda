@@ -37,7 +37,7 @@ if (($_SESSION['rol_usuario'] == 3)){
 
                         $user = $_SESSION['cod_usuario'];
                         
-                        $consult = "SELECT * FROM baseuno.casos
+                        $consult = "SELECT * FROM u253606672_db1_proyectos.casos
                                     WHERE ESTADO = 'En Curso'";
 
                         $consult_r =  mysqli_query($db, $consult);

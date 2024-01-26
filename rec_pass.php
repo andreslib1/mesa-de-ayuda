@@ -17,7 +17,7 @@ if (substr($rec_contra, -10) != '@gmail.com'){
     
     // validacion correo electronico en la base de datos
 
-    $query_con = "SELECT * FROM baseuno.usuarios_reg WHERE CORREO ='".$rec_contra."'";
+    $query_con = "SELECT * FROM u253606672_db1_proyectos.usuarios_reg WHERE CORREO ='".$rec_contra."'";
                                                 
     $consulta = mysqli_query($db,$query_con);
     
@@ -27,7 +27,7 @@ if (substr($rec_contra, -10) != '@gmail.com'){
 
             $token = uniqid(). "M41L"; //creacion de token 
 
-            $query_two = "UPDATE baseuno.usuarios_reg
+            $query_two = "UPDATE u253606672_db1_proyectos.usuarios_reg
                           SET TOKEN ='".$token."'
                           WHERE CORREO ='".$rec_contra."'";
                                                         
@@ -37,7 +37,7 @@ if (substr($rec_contra, -10) != '@gmail.com'){
 
             if($consulta_two){ 
 
-                $query_tr = "SELECT * FROM baseuno.usuarios_reg WHERE TOKEN ='".$token."'";
+                $query_tr = "SELECT * FROM u253606672_db1_proyectos.usuarios_reg WHERE TOKEN ='".$token."'";
 
                 $consulta_tr = mysqli_query($db,$query_tr);
 
@@ -49,7 +49,7 @@ if (substr($rec_contra, -10) != '@gmail.com'){
                         $correo = $rec_contra;
                         $asunto = "Restablecimiento de credenciales mesa de ayuda USTA";
                         $contenido = "Acabas de realizar una peticion de reestaclecimiento de credenciales a la mesa de ayuda USTA. Ingresa al siguiente enlace para reestablecer tu contraseña: <br><br>
-                                     <a href='https://blooming-garden-66388-f6bef38c55d9.herokuapp.com/restablecer_pass.php?token=".$row_tr['TOKEN']."&correo=".$row_tr['CORREO']."'><strong>Click en este enlace</strong></a><br><br>
+                                     <a href='https://mesadeayuda.nexoweblabs.com/restablecer_pass.php?token=".$row_tr['TOKEN']."&correo=".$row_tr['CORREO']."'><strong>Click en este enlace</strong></a><br><br>
                                      Si no has realizado ninguna peticion ignora este mensaje.";
 
                         enviar_correo($correo, $asunto, $contenido);  

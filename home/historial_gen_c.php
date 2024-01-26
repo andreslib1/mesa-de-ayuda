@@ -9,10 +9,10 @@ include ('header.php');
 
 $cod_caso = $_GET['cod_caso'];
 
-$consulta_e = "SELECT * FROM baseuno.casos
-                INNER JOIN baseuno.casos_tec
+$consulta_e = "SELECT * FROM u253606672_db1_proyectos.casos
+                INNER JOIN u253606672_db1_proyectos.casos_tec
                 ON casos.COD_CASO = COD_CASO_ATEN
-                INNER JOIN baseuno.usuarios_reg
+                INNER JOIN u253606672_db1_proyectos.usuarios_reg
                 ON usuarios_reg.COD_USUARIO = COD_USUARIO_TECNICO
                 WHERE casos.COD_CASO = $cod_caso"; 
 
@@ -23,7 +23,7 @@ $row_e = mysqli_fetch_assoc($query_e);
 
 
 
-$consulta_f = "SELECT * FROM baseuno.casos
+$consulta_f = "SELECT * FROM u253606672_db1_proyectos.casos
 WHERE casos.COD_CASO = $cod_caso"; 
 
 $query_f =  mysqli_query($db, $consulta_f);
@@ -73,7 +73,7 @@ display: none;
         
                         }else{
                         
-                            $consult = "SELECT MAX(COD_IMAGEN) FROM baseuno.imagen_adj";
+                            $consult = "SELECT MAX(COD_IMAGEN) FROM u253606672_db1_proyectos.imagen_adj";
 
                             $consult_r =  mysqli_query($db, $consult);
                 
@@ -89,10 +89,10 @@ display: none;
 
                             move_uploaded_file($adjunto['tmp_name'],'adjunto/'.$nom_archivo.$tipo_archivo);
 
-                            $insert_b = "INSERT INTO baseuno.imagen_adj (COD_IMAGEN, COD_CASO_IMA, DESCRIPCION, TIPO_ADJUNTO)   
+                            $insert_b = "INSERT INTO u253606672_db1_proyectos.imagen_adj (COD_IMAGEN, COD_CASO_IMA, DESCRIPCION, TIPO_ADJUNTO)   
                                         VALUES ($cod_imagen, $cod_caso, '".$nom_archivo.$tipo_archivo."', 'seguimiento')"; 
                             
-                            $insert_a = "INSERT INTO baseuno.seguimiento (COD_CASO_SEGUI, COD_USUARIO_SEGUI, DESCRIPCION_SEGUI, FECHA_SEGUIMIENTO, COD_IMAGEN) 
+                            $insert_a = "INSERT INTO u253606672_db1_proyectos.seguimiento (COD_CASO_SEGUI, COD_USUARIO_SEGUI, DESCRIPCION_SEGUI, FECHA_SEGUIMIENTO, COD_IMAGEN) 
                             VALUES ($cod_caso, $user_segui, '$seguimiento', NOW(), $cod_imagen)";
                             
                             $query_b =  mysqli_query($db, $insert_b);    
@@ -108,7 +108,7 @@ display: none;
 
 
               
-                    $insert_a = "INSERT INTO baseuno.seguimiento (COD_CASO_SEGUI, COD_USUARIO_SEGUI, DESCRIPCION_SEGUI, FECHA_SEGUIMIENTO) 
+                    $insert_a = "INSERT INTO u253606672_db1_proyectos.seguimiento (COD_CASO_SEGUI, COD_USUARIO_SEGUI, DESCRIPCION_SEGUI, FECHA_SEGUIMIENTO) 
                     VALUES ($cod_caso, $user_segui, '$seguimiento', NOW())";
 
                     $query_a =  mysqli_query($db, $insert_a);  
@@ -125,8 +125,8 @@ display: none;
                 //Me Trae todos los seguimientos realizados en el caso
 
                
-                $consult_b = "SELECT * FROM baseuno.seguimiento
-                                INNER JOIN baseuno.usuarios_reg
+                $consult_b = "SELECT * FROM u253606672_db1_proyectos.seguimiento
+                                INNER JOIN u253606672_db1_proyectos.usuarios_reg
                                 ON seguimiento.COD_USUARIO_SEGUI = usuarios_reg.COD_USUARIO
                                 where seguimiento.COD_CASO_SEGUI = $cod_caso
                                 ORDER BY seguimiento.COD_SEGUIMIENTO ASC";
@@ -185,7 +185,7 @@ display: none;
 
                  
                             
-                            $consulta_k = "SELECT * FROM baseuno.encuesta
+                            $consulta_k = "SELECT * FROM u253606672_db1_proyectos.encuesta
                                             where encuesta.COD_CASO_ENCUESTA = $cod_caso";
                             
                             $query_k =  mysqli_query($db, $consulta_k);
@@ -296,10 +296,10 @@ display: none;
 
 <?php
 
-            $consult_z = "SELECT * FROM baseuno.casos
-                            INNER JOIN baseuno.usuarios_reg
+            $consult_z = "SELECT * FROM u253606672_db1_proyectos.casos
+                            INNER JOIN u253606672_db1_proyectos.usuarios_reg
                             ON casos.COD_USUARIO_SOLICITA = usuarios_reg.COD_USUARIO
-                            where CASOS.COD_CASO = $cod_caso
+                            where casos.COD_CASO = $cod_caso
                             and usuarios_reg.COD_USUARIO = ".$row_e['COD_USUARIO_SOLICITA']."";
                             
                 
@@ -324,10 +324,10 @@ display: none;
 <?php
 // consulta para llamar el archivo adjunto de la descripcion
 
-            $consulta_f = "SELECT DESCRIPCION FROM baseuno.casos
-                                INNER JOIN baseuno.usuarios_reg
+            $consulta_f = "SELECT DESCRIPCION FROM u253606672_db1_proyectos.casos
+                                INNER JOIN u253606672_db1_proyectos.usuarios_reg
                                 ON casos.COD_USUARIO_SOLICITA = usuarios_reg.COD_USUARIO
-                                INNER JOIN baseuno.imagen_adj
+                                INNER JOIN u253606672_db1_proyectos.imagen_adj
                                 ON casos.COD_CASO = imagen_adj.COD_CASO_IMA
                                 WHERE COD_CASO = $cod_caso
                                 AND TIPO_ADJUNTO = 'caso'"; 
@@ -362,8 +362,8 @@ display: none;
 
 // consulta para llamar los documentos adjuntos en los seguimientos 
 
-            $consulta_y = "SELECT * FROM baseuno.seguimiento
-                            INNER JOIN baseuno.imagen_adj 
+            $consulta_y = "SELECT * FROM u253606672_db1_proyectos.seguimiento
+                            INNER JOIN u253606672_db1_proyectos.imagen_adj 
                             ON seguimiento.COD_IMAGEN = imagen_adj.COD_IMAGEN 
                             WHERE COD_CASO_SEGUI = $cod_caso
                             ORDER BY COD_SEGUIMIENTO ASC"; 

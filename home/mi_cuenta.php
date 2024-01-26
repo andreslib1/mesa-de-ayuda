@@ -6,7 +6,7 @@ include ('header.php');
 
 $cod_user = $_SESSION['cod_usuario'];
 
-$consul = "SELECT * FROM baseuno.usuarios_reg  
+$consul = "SELECT * FROM u253606672_db1_proyectos.usuarios_reg  
             WHERE COD_USUARIO = '$cod_user'";
 
 $query =  mysqli_query($db, $consul);
@@ -44,7 +44,7 @@ $row = mysqli_fetch_assoc($query);
             $cargo = $_POST['cargo'];
 
 
-            $update = "UPDATE baseuno.usuarios_reg 
+            $update = "UPDATE u253606672_db1_proyectos.usuarios_reg 
                        SET NOMBRE_USUARIO = '$nombre',
                            APELLIDO = '$apellido',
                            DEPENDENCIA = '$dependencia',

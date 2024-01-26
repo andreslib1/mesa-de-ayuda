@@ -40,7 +40,7 @@ if(($nombre == '') || ($apellido == '') || ($correo == '') || ($dependencia == '
 
     }else{
 
-        $consulta = "SELECT * FROM baseuno.usuarios_reg where CORREO = '$correo'";
+        $consulta = "SELECT * FROM u253606672_db1_proyectos.usuarios_reg where CORREO = '$correo'";
         
         $consult =  mysqli_query($db, $consulta);
 
@@ -48,7 +48,7 @@ if(($nombre == '') || ($apellido == '') || ($correo == '') || ($dependencia == '
 
         if ($row != ''){
 
-            $update = "UPDATE baseuno.usuarios_reg SET COD_ROL_USUARIO = $rol_user, NOMBRE_USUARIO = '$nombre', APELLIDO = '$apellido', CORREO = '$correo' , DEPENDENCIA = '$dependencia', UBICACION = '$ubicacion', CARGO = '$cargo', ESTADO_USUARIO = '$est_user ', FECHA_ACTUALIZACION = NOW() 
+            $update = "UPDATE u253606672_db1_proyectos.usuarios_reg SET COD_ROL_USUARIO = $rol_user, NOMBRE_USUARIO = '$nombre', APELLIDO = '$apellido', CORREO = '$correo' , DEPENDENCIA = '$dependencia', UBICACION = '$ubicacion', CARGO = '$cargo', ESTADO_USUARIO = '$est_user ', FECHA_ACTUALIZACION = NOW() 
             WHERE CORREO = '$correo'";
 
             $insert_q =  mysqli_query($db, $update);

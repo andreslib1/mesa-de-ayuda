@@ -32,8 +32,8 @@ include ('header.php');
 
                 $user = $_SESSION['cod_usuario'];
                 
-                $consult = "SELECT * FROM baseuno.casos
-                            INNER JOIN baseuno.usuarios_reg
+                $consult = "SELECT * FROM u253606672_db1_proyectos.casos
+                            INNER JOIN u253606672_db1_proyectos.usuarios_reg
                             ON casos.COD_USUARIO_SOLICITA = usuarios_reg.COD_USUARIO
                             WHERE casos.COD_USUARIO_SOLICITA = $user";
 

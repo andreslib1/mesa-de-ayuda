@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 // verifica usuario, contraseña y si se encuenta activo 
 
-$query = "SELECT * FROM baseuno.usuarios_reg  
+$query = "SELECT * FROM u253606672_db1_proyectos.usuarios_reg  
 WHERE CORREO = '$usuario'";
 
 $consult =  mysqli_query($db, $query);

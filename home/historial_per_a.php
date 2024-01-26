@@ -38,8 +38,8 @@ if ($_SESSION['rol_usuario'] == 3){
 
                 $user = $_SESSION['cod_usuario'];
                 
-                $consult = "SELECT * FROM baseuno.casos
-                                INNER JOIN baseuno.casos_tec
+                $consult = "SELECT * FROM u253606672_db1_proyectos.casos
+                                INNER JOIN u253606672_db1_proyectos.casos_tec
                                 ON casos.COD_CASO = casos_tec.COD_CASO_ATEN
                                 WHERE casos_tec.COD_USUARIO_TECNICO = $user
                                 AND casos.ESTADO = 'Cerrado'";

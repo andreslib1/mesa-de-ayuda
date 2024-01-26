@@ -18,7 +18,7 @@ if(($pass =='') || ($conf_pass == '')){
                     $pass_hash = password_hash($conf_pass, PASSWORD_BCRYPT);
 
 
-                     $query_two = "UPDATE baseuno.usuarios_reg
+                     $query_two = "UPDATE u253606672_db1_proyectos.usuarios_reg
                      SET TOKEN ='restaurado', PASSWORD = '".$pass_hash."' 
                      WHERE CORREO ='".$correo."'";
                                                    
