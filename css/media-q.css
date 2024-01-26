@@ -1,0 +1,64 @@
+
+.custom-icon {
+  font-size: 25px;
+  color:black;
+}
+
+@media(max-width: 696px){
+  #tables_h{
+    font-size: 7px;
+  }
+  .custom-icon-h{
+    font-size: 10px;
+    color:black;
+  }
+
+}
+
+
+@media (max-width: 576px) {
+  .custom-icon {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 922px) {
+    #titulo_logo {
+      display: none;
+    }
+    #etiqueta {
+      font-size: 15px;  
+    }
+    #etiqueta_pri{
+      font-size: 15px;  
+    }
+
+    #h7{
+      display: none;
+    }
+    #inicion_text{
+      font-size: 15px;  
+    }
+    #tables{
+      font-size: 14px; 
+    }
+
+
+  }
+
+  @media (max-width: 922px) {
+    .hide-text {
+      font-size: 0;
+    }
+    .hide-text i {
+      font-size: 1rem; /* Ajusta el tamaño del ícono según lo desees */
+    }
+  }
+
+  @media(max-width: 575px){
+    #sidebar{
+
+        border-right: 10px solid #fdfbfb;
+    }
+
+  }

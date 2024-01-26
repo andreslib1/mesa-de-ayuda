@@ -1,0 +1,52 @@
+/* Estilo de input*/
+    .input_login {
+        line-height: 28px;
+        border: 2px solid transparent;
+        border-bottom-color: #777;
+        padding: .2rem 0;
+        outline: none;
+        background-color: transparent;
+        color: #0d0c22;
+        transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+       }
+       
+       .input_login:focus, .input_login:hover {
+        outline: none;
+        padding: .2rem 1rem;
+        border-radius: 1rem;
+        border-color: #7a9cc6;
+       }
+       
+       .input_login::placeholder {
+        color: #777;
+       }
+       
+       .input_login:focus::placeholder {
+        opacity: 0;
+        transition: opacity .3s;
+       }
+
+       .registrarse{
+        color: #1368cf;
+        cursor: pointer;
+        font-weight:600;
+        text-decoration-line: none;
+       }
+
+       .registrarse:hover{
+        color:#2f3d4e;
+        transition: 1s;
+       }
+
+       .olvi_contra{
+        color: #1368cf;
+        font-weight:600;
+        text-decoration-line: none;
+       }
+
+       .olvi_contra:hover{
+        color:#2f3d4e;
+        transition: 1s;
+       }
+
+       

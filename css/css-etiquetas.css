@@ -1,0 +1,23 @@
+#etiqueta {
+    color: #c2c2c2; /* Color predeterminado del enlace */
+    text-decoration: none; /* Quita la subrayado del enlace */
+    transition: color 0.3s ease; /* Agrega una transición de 0.3 segundos a la propiedad color */
+  }
+  
+  #etiqueta:hover {
+    color: #000; /* Color de texto negro cuando se pasa el cursor */
+    font-weight: 300; /* Establece el peso de la fuente en negrita */
+  }
+
+  #etiqueta_pri{
+    color: #000; 
+    text-decoration: none;
+    transition: color 0.3s ease; 
+  }
+
+
+  
+
+
+
+

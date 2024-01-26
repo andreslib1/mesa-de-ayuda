@@ -1,0 +1,9 @@
+archivo rec_pass linea 52 -> cambiar el enlace una vez se suba a un dominio el aplicativo 
+archivo new_caso.php -> verificar la etiqueta <textarea> no trae el dato 
+tipo de correo -> modificar rec_pass linea 11 para permitir correo @usta 
+
+
+
+
+
+
