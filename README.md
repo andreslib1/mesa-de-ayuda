@@ -70,7 +70,7 @@ El proceso de restablecimiento de contraseña utiliza un token enviado al correo
 ## Proceso de Gestión de Casos en la Mesa de Ayuda
 
  <p align="center">
- <img src="/img_readme/diagram.png" width="500">
+ <img src="/img_readme/gestion de casos.png" width="500">
 </p>
 
 ## Base de datos
@@ -118,4 +118,6 @@ Lleva un registro de los técnicos encargados de atender cada caso asignado, fac
 
 ## Estructura de la Base de Datos
 
-//imagen de la estructura.
+ <p align="center">
+ <img src="/img_readme/diagram.png" width="500">
+</p>
