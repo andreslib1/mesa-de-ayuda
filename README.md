@@ -116,7 +116,7 @@ Lleva un registro de los técnicos encargados de atender cada caso asignado, fac
 - **`SEGUIMIENTO` e `IMAGEN_ADJ`**: `COD_IMAGEN` en `SEGUIMIENTO` se relaciona con `COD_IMAGEN` en `IMAGEN_ADJ`.
 - **`IMAGEN_ADJ` y `CASOS`**: `COD_CASO_IMA` en `IMAGEN_ADJ` se relaciona con `COD_CASO` en `CASOS`.
 
-## Estructura de la Base de Datos
+## Estructura, distribucion de directorios. 
 
  <p align="center">
  <img src="/img_readme/diagram.png" width="500">
