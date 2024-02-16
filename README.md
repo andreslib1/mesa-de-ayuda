@@ -4,6 +4,10 @@ Este proyecto se desarrolló como una tesis de grado, enfocado en la creación d
 
 Este proyecto es dinámico y opera mediante una base de datos que almacena la información de los usuarios, casos y sus respectivos seguimientos.
 
+## Usuario
+user: testuser@usta.edu.co
+pass: 111
+
 ## Tecnologías y Herramientas Utilizadas
 
 - PHP v8
