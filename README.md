@@ -6,6 +6,7 @@ Este proyecto es dinámico y opera mediante una base de datos que almacena la in
 
 ## Usuario
 user: testuser@usta.edu.co
+
 pass: 111
 
 ## Tecnologías y Herramientas Utilizadas
